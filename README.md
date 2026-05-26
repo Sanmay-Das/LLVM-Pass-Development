@@ -1,12 +1,11 @@
-llvm-tutor
+LLVM Pass Development
 =========
-[![Apple Silicon](https://github.com/banach-space/llvm-tutor/actions/workflows/apple-silicon.yml/badge.svg?branch=main)](https://github.com/banach-space/llvm-tutor/actions/workflows/apple-silicon.yml)
-[![x86-Ubuntu](https://github.com/banach-space/llvm-tutor/actions/workflows/x86-ubuntu.yml/badge.svg?branch=main)](https://github.com/banach-space/llvm-tutor/actions/workflows/x86-ubuntu.yml)
+
 
 
 Example LLVM passes - based on **LLVM 19**
 
-**llvm-tutor** is a collection of self-contained reference LLVM passes. It's a
+**LLVM Pass Development** is a collection of self-contained reference LLVM passes. It's a
 tutorial that targets novice and aspiring LLVM developers. Key features:
 
 * **Out-of-tree** - builds against a binary LLVM installation (no need to build LLVM from sources)
@@ -33,7 +32,7 @@ are internested in similar tutorial for Clang.
 
 ### Table of Contents
 * [HelloWorld: Your First Pass](#helloworld-your-first-pass)
-* Part 1: **llvm-tutor** in more detail
+* Part 1: **LLVM Pass Development** in more detail
   * [Development Environment](#development-environment)
   * [Building & Testing](#building--testing)
   * [Overview of the Passes](#overview-of-the-passes)
@@ -1041,7 +1040,7 @@ transform the input module, so in practice it is an Analysis pass. However, in
 order to keep the implementation as simple as possible, I used the API for
 Transformation passes.
 
-Within **llvm-tutor** the following passes can be used as reference Analysis
+Within **LLVM Pass Development** the following passes can be used as reference Analysis
 and Transformation examples:
 
 * [**OpcodeCounter**](#opcodecounter) - analysis pass
@@ -1063,7 +1062,7 @@ passes under the `print<analysis-pass-name>` command line option.
 
 Dynamic vs Static Plugins
 =========================
-By default, all examples in **llvm-tutor** are built as
+By default, all examples in **LLVM Pass Development** are built as
 [dynamic plugins](#llvm-plugins-as-shared-objecs). However, LLVM provides
 infrastructure for both _dynamic_ and _static_ plugins
 ([documentation](https://llvm.org/docs/WritingAnLLVMPass.html#building-pass-plugins)).
@@ -1072,7 +1071,7 @@ statically. This way, unlike dynamic plugins, they don't require to be loaded at
 runtime with `-load-pass-plugin`.
 
 Static plugins are normally developed in-tree, i.e. within `llvm-project/llvm`,
-and all examples in **llvm-tutor** can be adapted to work this way. You can use
+and all examples in **LLVM Pass Development** can be adapted to work this way. You can use
 [static_registation.sh](https://github.com/banach-space/llvm-tutor/blob/main/utils/static_registration.sh)
 to see it can be done for [**MBASub**](#mbasub). This script will:
 
